@@ -1,9 +1,6 @@
 name: Test inputs
 
 on:
-    push:
-        branches:
-            - main
     workflow_dispatch:
         inputs:
             old_version: 
