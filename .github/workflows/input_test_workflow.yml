@@ -23,7 +23,7 @@ env:
 
 jobs:
     create_test_inputs:
-        runs_on: windows_latest
+        runs-on: windows-latest
         
         steps:
             - name: Debug inputs
