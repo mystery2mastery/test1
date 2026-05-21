@@ -1,0 +1,33 @@
+name: Test inputs
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+        inputs:
+            old_version: 
+                description: 'old'
+                required: true
+                type: string
+            new_version:
+                description: 'new'
+                required: true
+                type: string
+
+
+env:
+    OLD_VERSION: ${{ inputs.old_version }}
+    NEW_VERSION: ${{ inputs.new_version }}
+
+
+jobs:
+    create_test_inputs:
+        runs_on: windows_latest
+        
+        steps:
+            - name: Debug inputs
+              run: |
+               echo "OLD_VERSION = ${{ inputs.old_version }}"
+               echo "NEW_VERSION = ${{ inputs.new_version }}"
+               exit 1
